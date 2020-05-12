@@ -14,11 +14,11 @@ import (
 
 // ManifestHead defines what the structure of the head of a manifest file
 type ManifestHead struct {
-	Version  string `yaml:"apiVersion"`
-	Kind     string `yaml:"kind"`
+	Version  string `yaml:"apiVersion" json:"apiVersion"`
+	Kind     string `yaml:"kind" json:"kind"`
 	Metadata *struct {
-		Name      string `yaml:"name"`
-		Namespace string `yaml:"namespace"`
+		Name      string `yaml:"name" json:"name"`
+		Namespace string `yaml:"namespace" json:"namespace"`
 	} `yaml:"metadata"`
 }
 
@@ -41,7 +41,7 @@ func SplitManifests(bigFile string) []string {
 	return res
 }
 
-var version = "k8split v1.0.0"
+var version = "k8split v1.1.0"
 
 func printVersion() {
 	fmt.Println(version)
